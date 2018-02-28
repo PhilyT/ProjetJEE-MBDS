@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p><label>Nom : </label>{{librairy.name}}</p>
+      <p><label>Adresse  : </label>{{librairy.address}}</p>
+      <p><label>Année d'inauguration  : </label>{{librairy.yearCreated}}</p>
+      <p><label>Livres : </label>
+      <fieldset>
+        <p *ngFor="let book of librairy.books">{{book.isbn}} : "{{book.name}}" <i>{{book.author}}</i> {{book.releaseDate}}</p>
+      </fieldset>
+      <button>Modifier</button> <button>Supprimer</button>
+    </div>
+  </div>
+</div>

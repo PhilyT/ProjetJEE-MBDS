@@ -1,7 +1,5 @@
 ---
 grails:
-    cors:
-      enabled: true
     profile: web
     codegen:
         defaultPackage: com.mbds.tpwsrest
