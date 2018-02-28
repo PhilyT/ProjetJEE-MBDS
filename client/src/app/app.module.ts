@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailLibrairyComponent } from './detail-librairy/detail-librairy.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { ModifilibraryComponent } from './modifilibrary/modifilibrary.component';
+import { AjoutlivreComponent } from './ajoutlivre/ajoutlivre.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
 
     DetailLibrairyComponent,
     UpdateBookComponent,
-    ModifilibraryComponent
+    ModifilibraryComponent,
+    AjoutlivreComponent
   ],
   imports: [
     BrowserModule,

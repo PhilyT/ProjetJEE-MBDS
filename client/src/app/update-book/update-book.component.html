@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
-      <a [routerLink]="['/detailBibliotheque', idLibrairy]">< Retour</a>
+    <a [routerLink]="['/detailBibliotheque', idLibrairy]">< Retour</a>
+  </div>
+  <div class="row mt-4 mb-5">
+    <div class="col-xs-12">
       <form #f="ngForm" (ngSubmit)="editBook(f)">
         <div class="form-group">
           <label for="name">Nom : </label>
@@ -9,7 +11,7 @@
         </div>
         <div class="form-group">
           <label for="dateRelease">Date de publication : </label>
-          <input type="date" class="form-control" id="dateRelease" value="{{book.releaseDate}}">
+          <input class="form-control" id="releaseDate" value="{{book.releaseDate| date: 'dd/MM/yyyy'}}">
         </div>
         <div class="form-group">
           <label for="isbn">ISBN : </label>
