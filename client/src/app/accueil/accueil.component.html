@@ -19,8 +19,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let library of librairies">
-           <td>{{library.name}}</td>
-            <td>
+           <td ><a [routerLink]="['detailBibliotheque', library.id]">{{library.name}} </a></td>
+            <td >
                 <button type="button" class="btn btn-danger">Supprimer</button>
                  
             </td>
