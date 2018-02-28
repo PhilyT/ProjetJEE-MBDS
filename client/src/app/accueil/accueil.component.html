@@ -18,29 +18,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-           <td>bu de nice</td>
+          <tr *ngFor="let library of librairies">
+           <td>{{library.name}}</td>
             <td>
                 <button type="button" class="btn btn-danger">Supprimer</button>
                  
             </td>
             <td><button type="button" class="btn btn-primary">Modifier</button></td>
           </tr>
-          <tr>
-           
-            <td>BU de toulouse</td>
-            <td> 
-                <button type="button" class="btn btn-danger">Supprimer</button>
-            
-           </td>
-            <td>  <button type="button" class="btn btn-primary">Modifier</button></td>
-          </tr>
-          <tr>
-            
-            <td>BU BORDEAU</td>
-            <td> <button type="button" class="btn btn-danger">Supprimer</button></td>
-            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-          </tr>
+          
         </tbody>
       </table>
 </div>

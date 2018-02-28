@@ -18,4 +18,12 @@ export class LibrairiesService {
     return this.http.get(url,options).map((response: Response) => response.json());
   }
 
+  getLibraries() {
+    const url = 'http://localhost:8081/tpwsrest/libraries';
+    const headers = new Headers();
+    headers.append('Accept', 'application/json');
+    const options = new RequestOptions({headers: headers});
+    return this.http.get(url,options).map((response: Response) => response.json());
+  }
+
 }
