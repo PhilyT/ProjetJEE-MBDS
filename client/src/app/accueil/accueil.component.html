@@ -19,12 +19,12 @@
         </thead>
         <tbody>
           <tr *ngFor="let library of librairies">
-           <td ><a [routerLink]="['detailBibliotheque', library.id]">{{library.name}} </a></td>
+           <td ><a [routerLink]="['detailBibliotheque', library.id]" class="link">{{library.name}} </a></td>
             <td >
                 <button type="button" class="btn btn-danger">Supprimer</button>
                  
             </td>
-            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+            <td><button type="button" class="btn btn-primary" [routerLink]="['modifierLibrairy', library.id]">Modifier</button></td>
           </tr>
           
         </tbody>
