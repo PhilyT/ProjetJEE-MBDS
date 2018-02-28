@@ -7,11 +7,32 @@
       <p><label>Nom : </label>{{librairy.name}}</p>
       <p><label>Adresse  : </label>{{librairy.address}}</p>
       <p><label>Année d'inauguration  : </label>{{librairy.yearCreated}}</p>
-      <p><label>Livres : </label>
-      <fieldset>
-        <p *ngFor="let book of librairy.books">{{book.isbn}} : "{{book.name}}" <i>{{book.author}}</i> {{book.releaseDate| date: 'dd/MM/yyyy'}} <button [routerLink]="['/modifierLivre', librairy.id,book.id]">Modifier</button> <button>Supprimer</button></p>
-      </fieldset>
-      <button>Modifier</button> <button>Supprimer</button>
+      <div classe="tab">
+        <table class="table">
+          <thead>
+          <tr>
+
+            <th>Livres</th>
+            <th></th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let book of librairy.books">
+            <td>{{book.isbn}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.releaseDate| date: 'dd/MM/yyyy'}}</td>
+            <td>
+              <button type="button" class="btn btn-danger">Supprimer</button>
+            </td>
+            <td><button class="btn btn-primary"  [routerLink]="['/modifierLivre', librairy.id,book.id]">Modifier</button></td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-primary" [routerLink]="['/modifierLibrairy', librairy.id]">Modifier</button> <button class="btn btn-danger">Supprimer</button>
     </div>
   </div>
 </div>
