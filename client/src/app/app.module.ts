@@ -8,23 +8,38 @@ import {LibrairyBooksService} from './librairy-books.service';
 import {LibrairiesService} from './librairies.service';
 import { AppComponent } from './app.component';
 import { AjoutlibrairieComponent } from './ajoutlibrairie/ajoutlibrairie.component';
-import { DetailLibrairyComponent } from './detail-librairy/detail-librairy.component';
-import { UpdateBookComponent } from './update-book/update-book.component';
+
+import { AccueilComponent } from './accueil/accueil.component';
+import { SliderModule } from 'angular-image-slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 const appRoutes: Routes = [
+  { path: '', component: AccueilComponent },
   { path: 'ajoutLibrairie', component: AjoutlibrairieComponent },
   { path: 'detailBibliotheque/:id', component: DetailLibrairyComponent },
   { path: 'modifierLivre/:idLibrairy/:idBook', component: UpdateBookComponent }]
+
+import { DetailLibrairyComponent } from './detail-librairy/detail-librairy.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AjoutlibrairieComponent,
+    AccueilComponent,
+
     DetailLibrairyComponent,
     UpdateBookComponent
   ],
   imports: [
     BrowserModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    SliderModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule,

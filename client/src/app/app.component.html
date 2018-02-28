@@ -1,8 +1,74 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <a routerLink="/ajoutLibrairie">Ajouter Librairie</a><hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+  <script src="assets/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body class="corps">
+
+<div id="mydiv"class="jumbotron text-center">
+  <div class="livreimg">
+    <img class="im" src="assets/images/livre1.jpg"/>
+  </div>
+  
+  <h1>Bibliothéques France</h1>
+ 
 </div>
+  
+<div class="container">
+    <router-outlet></router-outlet>
+    
+  </div>
 
-
-<router-outlet></router-outlet>
+  <footer >
+      <div id="mv" class="container-fluid ">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-7">
+             <div class="row py-0">
+           <div class="col-sm-1 hidden-md-down">
+               <a class="bg-circle bg-info" href="#">
+                 <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
+               </a>
+             </div>
+             <div class="col-sm-11 text-white">
+                 <div><h4>  Contact</h4>
+                     <p>   <span class="header-font">M</span>y<span class="header-font">w</span>website.com</p>
+                 </div>
+             </div>
+             </div>
+         </div>
+         <div class="col-md-5">
+           <div class="d-inline-block">
+             <div class="bg-circle-outline d-inline-block" style="background-color:#3b5998">
+               <a href="https://www.facebook.com/"><i class="fa fa-2x fa-fw fa-facebook text-white"></i>
+     </a>
+             </div>
+             <div class="bg-circle-outline d-inline-block" style="background-color:#4099FF">
+               <a href="https://twitter.com/">
+                 <i class="fa fa-2x fa-fw fa-twitter text-white"></i></a>
+             </div>
+ 
+             <div class="bg-circle-outline d-inline-block" style="background-color:#0077B5">
+               <a href="https://www.linkedin.com/company/">
+                 <i class="fa fa-2x fa-fw fa-linkedin text-white"></i></a>
+             </div>
+             <div class="bg-circle-outline d-inline-block" style="background-color:#d34836">
+               <a href="https://www.google.com/">
+                 <i class="fa fa-2x fa-fw fa-google text-white"></i></a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     </div>
+ </footer>
+</body>
+</html>
 
