@@ -1,3 +1,26 @@
-<p>
-  update-book works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <a [routerLink]="['/detailBibliotheque', idLibrairy]">< Retour</a>
+      <form #f="ngForm" (ngSubmit)="editBook(f)">
+        <div class="form-group">
+          <label for="name">Nom : </label>
+          <input class="form-control" id="name" value="{{book.name}}">
+        </div>
+        <div class="form-group">
+          <label for="dateRelease">Date de publication : </label>
+          <input type="date" class="form-control" id="dateRelease" value="{{book.releaseDate}}">
+        </div>
+        <div class="form-group">
+          <label for="isbn">ISBN : </label>
+          <input  class="form-control" id="isbn" value="{{book.isbn}}">
+        </div>
+        <div class="form-group">
+          <label for="author">Auteur : </label>
+          <input  class="form-control" id="author" value="{{book.author}}">
+        </div>
+        <button type="submit" class="btn btn-default">Modifier</button> <button class="btn btn-default">Supprimer</button>
+      </form>
+    </div>
+  </div>
+</div>

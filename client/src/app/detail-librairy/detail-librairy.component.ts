@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
+import { ActivatedRoute } from '@angular/router';
 import { LibrairyBooksService} from '../librairy-books.service';
 import {LibrairiesService} from '../librairies.service';
 
@@ -10,15 +11,21 @@ import {LibrairiesService} from '../librairies.service';
 })
 export class DetailLibrairyComponent implements OnInit {
   librairy: any;
-  constructor(private http: Http, private librairyBooksService: LibrairyBooksService, private  librairiesService: LibrairiesService) { }
+
+  constructor(private route: ActivatedRoute,
+              private http: Http,
+              private librairyBooksService: LibrairyBooksService,
+              private  librairiesService: LibrairiesService) { }
 
   ngOnInit() {
-    this.librairiesService.getLibrairy(1).subscribe(response => {
-      this.librairy = response;
-      this.librairyBooksService.getBooksOfLibrairy(1).subscribe(response2 => {
-        this.librairy.books = response2;
+    this.route.params.subscribe(params => {
+      const idLibrairy = params['id'];
+      this.librairiesService.getLibrairy(idLibrairy).subscribe(response => {
+        this.librairy = response;
+        this.librairyBooksService.getBooksOfLibrairy(idLibrairy).subscribe(response2 => {
+          this.librairy.books = response2;
+        });
       });
     });
   }
-
 }
