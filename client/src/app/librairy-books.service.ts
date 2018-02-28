@@ -15,6 +15,13 @@ export class LibrairyBooksService {
     const headers = new Headers();
     headers.append('Accept', 'application/json');
     const options = new RequestOptions({headers: headers});
-    return this.http.get(url,options).map((response: Response) => response.json());
+    return this.http.get(url, options).map((response: Response) => response.json());
+  }
+  getBookOfLibrairy(librairyId, bookId) {
+    const url = 'http://localhost:8081/tpwsrest/biblio/' + librairyId + '/book?book.id=' + bookId;
+    const headers = new Headers();
+    headers.append('Accept', 'application/json');
+    const options = new RequestOptions({headers: headers});
+    return this.http.get(url, options).map((response: Response) => response.json());
   }
 }

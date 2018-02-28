@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -12,8 +13,8 @@ import { UpdateBookComponent } from './update-book/update-book.component';
 
 const appRoutes: Routes = [
   { path: 'ajoutLibrairie', component: AjoutlibrairieComponent },
-  { path: 'détailBibliothèque', component: DetailLibrairyComponent },
-  { path: 'modifierLivre', component: UpdateBookComponent }]
+  { path: 'detailBibliotheque/:id', component: DetailLibrairyComponent },
+  { path: 'modifierLivre/:idLibrairy/:idBook', component: UpdateBookComponent }]
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    FormsModule,
     HttpModule,
   ],
   providers: [LibrairyBooksService, LibrairiesService],
