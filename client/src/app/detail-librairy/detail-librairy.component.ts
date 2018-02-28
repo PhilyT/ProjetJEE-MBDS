@@ -9,13 +9,15 @@ import {LibrairiesService} from '../librairies.service';
   styleUrls: ['./detail-librairy.component.css']
 })
 export class DetailLibrairyComponent implements OnInit {
-  librairy: object;
+  librairy: any;
   constructor(private http: Http, private librairyBooksService: LibrairyBooksService, private  librairiesService: LibrairiesService) { }
 
   ngOnInit() {
     this.librairiesService.getLibrairy(1).subscribe(response => {
-      console.log(response);
       this.librairy = response;
+      this.librairyBooksService.getBooksOfLibrairy(1).subscribe(response2 => {
+        this.librairy.books = response2;
+      });
     });
   }
 
