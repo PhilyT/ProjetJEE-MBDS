@@ -25,6 +25,8 @@ export class LibrairyBooksService {
     const options = new RequestOptions({headers: headers});
     return this.http.get(url, options).map((response: Response) => response.json());
   }
+
+  
   putBookOfLibrairy(book, idLibrairy) {
     // const dateArray = book.releaseDate.split('/');
     // console.log(dateArray);
