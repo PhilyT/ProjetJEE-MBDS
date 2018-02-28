@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
           <label for="dateRelease">Date de publication : </label>
-          <input class="form-control" id="releaseDate" value="{{book.releaseDate| date: 'dd/MM/yyyy'}}">
+          <input class="form-control" id="releaseDate" value="{{book.releaseDate| date: 'dd/MM/yyyy'}}" (change)="parseDate($event)">
         </div>
         <div class="form-group">
           <label for="isbn">ISBN : </label>
