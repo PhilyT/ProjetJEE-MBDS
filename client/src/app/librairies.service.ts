@@ -25,5 +25,12 @@ export class LibrairiesService {
     const options = new RequestOptions({headers: headers});
     return this.http.get(url,options).map((response: Response) => response.json());
   }
+  putLibrairy(formdata:any){
+    var url = 'http://localhost:8081/tpwsrest/library?name='+formdata.name+'&address='+formdata.address+'&yearCreated='+formdata.yearCreated+'&id='+formdata.id;
+    const headers = new Headers();
+    headers.append('Accept', 'application/json');
+    const options = new RequestOptions({headers: headers});
+    return this.http.put(url,options).map((response: Response) => response.json());
+  }
 
 }
