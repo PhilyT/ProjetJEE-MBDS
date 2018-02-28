@@ -12,16 +12,21 @@ import { AjoutlibrairieComponent } from './ajoutlibrairie/ajoutlibrairie.compone
 import { AccueilComponent } from './accueil/accueil.component';
 import { SliderModule } from 'angular-image-slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailLibrairyComponent } from './detail-librairy/detail-librairy.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
+import { ModifilibraryComponent } from './modifilibrary/modifilibrary.component';
+import { AjoutlivreComponent } from './ajoutlivre/ajoutlivre.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'ajoutLibrairie', component: AjoutlibrairieComponent },
   { path: 'detailBibliotheque/:id', component: DetailLibrairyComponent },
-  { path: 'modifierLivre/:idLibrairy/:idBook', component: UpdateBookComponent }]
+  { path: 'modifierLivre/:idLibrairy/:idBook', component: UpdateBookComponent },
+  { path: 'modifierLibrairy/:idLibrairy', component: ModifilibraryComponent}
+]
 
-import { DetailLibrairyComponent } from './detail-librairy/detail-librairy.component';
-import { UpdateBookComponent } from './update-book/update-book.component';
+
 
 
 
@@ -33,7 +38,9 @@ import { UpdateBookComponent } from './update-book/update-book.component';
     AccueilComponent,
 
     DetailLibrairyComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    ModifilibraryComponent,
+    AjoutlivreComponent
   ],
   imports: [
     BrowserModule,

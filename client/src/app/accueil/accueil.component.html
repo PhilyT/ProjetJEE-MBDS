@@ -18,29 +18,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-           <td>bu de nice</td>
-            <td>
+          <tr *ngFor="let library of librairies">
+           <td ><a [routerLink]="['detailBibliotheque', library.id]" class="link">{{library.name}} </a></td>
+            <td >
                 <button type="button" class="btn btn-danger">Supprimer</button>
                  
             </td>
-            <td><button type="button" class="btn btn-primary">Modifier</button></td>
+            <td><button type="button" class="btn btn-primary" [routerLink]="['modifierLibrairy', library.id]">Modifier</button></td>
           </tr>
-          <tr>
-           
-            <td>BU de toulouse</td>
-            <td> 
-                <button type="button" class="btn btn-danger">Supprimer</button>
-            
-           </td>
-            <td>  <button type="button" class="btn btn-primary">Modifier</button></td>
-          </tr>
-          <tr>
-            
-            <td>BU BORDEAU</td>
-            <td> <button type="button" class="btn btn-danger">Supprimer</button></td>
-            <td><button type="button" class="btn btn-primary">Modifier</button></td>
-          </tr>
+          
         </tbody>
       </table>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LibrairiesService } from '../librairies.service';
+import { Http } from '@angular/http';
 
 
 @Component({
@@ -9,8 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http,private serviceLibraries: LibrairiesService) { }
   public imagesUrl;
+  librairies=new Array();
+
 
   ngOnInit() {
     this.imagesUrl = [
@@ -19,5 +23,12 @@ export class AccueilComponent implements OnInit {
       './assets/images/bu3.jpg',
       './assets/images/bu4.jpg',
     ];
+    this. serviceLibraries.getLibraries().subscribe(response => {
+      console.log("bbbbb");
+    
+     this.librairies=response;
+     console.log(this.librairies);
+      
+    });
   }
 }

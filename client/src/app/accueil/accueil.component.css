@@ -22,3 +22,20 @@
     line-height: 1.33;
     border-radius: 25px;
   }
+  .link{
+      color: #18082c;
+  }
+  /* visited link */
+.link:visited {
+    color: green;
+}
+
+/* mouse over link */
+.link:hover {
+    color: #674e27;
+}
+
+/* selected link */
+.link:active {
+    color: yellow;
+}
