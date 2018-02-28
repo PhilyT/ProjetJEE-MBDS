@@ -19,14 +19,28 @@ export class UpdateBookComponent implements OnInit {
       const idBook = params['idBook'];
       this.librairyBooksService.getBookOfLibrairy(this.idLibrairy, idBook).subscribe(response => {
         this.book = response;
-        console.log(response.releaseDate);
-        this.book.releaseDate =  new Date(response.releaseDate);
       });
     });
   }
 
-  editBook(form) {
-
+  editBook() {
+    if (this.controlInputs()) {
+      this.librairyBooksService.putBookOfLibrairy(this.book, this.idLibrairy).subscribe(response => console.log(response.data));
+      alert("modification réussi");
+    }
+    else {
+      alert("les champs n'accèptent pas de valeurs null");
+    }
   }
 
+  controlInputs() {
+    return !this.emptyorblank(this.book.name)
+      && !this.emptyorblank(this.book.author)
+      && !this.emptyorblank(this.book.releaseDate)
+      && !this.emptyorblank(this.book.isbn);
+  }
+
+  emptyorblank(s) {
+    return (0 === s.length) || (s.trim().length === 0);
+  }
 }

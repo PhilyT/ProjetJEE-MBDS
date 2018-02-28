@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+    <a [routerLink]="['/']">< Retour</a>
+  </div>
+  <div class="row mt-4 mb-5">
+    <div class="col-xs-12">
       <p><label>Nom : </label>{{librairy.name}}</p>
       <p><label>Adresse  : </label>{{librairy.address}}</p>
       <p><label>Année d'inauguration  : </label>{{librairy.yearCreated}}</p>
       <p><label>Livres : </label>
       <fieldset>
-        <p *ngFor="let book of librairy.books">{{book.isbn}} : "{{book.name}}" <i>{{book.author}}</i> {{book.releaseDate}} <button [routerLink]="['/modifierLivre', librairy.id,book.id]">Modifier</button> <button>Supprimer</button></p>
+        <p *ngFor="let book of librairy.books">{{book.isbn}} : "{{book.name}}" <i>{{book.author}}</i> {{book.releaseDate| date: 'dd/MM/yyyy'}} <button [routerLink]="['/modifierLivre', librairy.id,book.id]">Modifier</button> <button>Supprimer</button></p>
       </fieldset>
       <button>Modifier</button> <button>Supprimer</button>
     </div>
