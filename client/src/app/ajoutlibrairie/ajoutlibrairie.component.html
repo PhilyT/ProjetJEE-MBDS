@@ -1,11 +1,12 @@
 <div class="myconainer">
-  <form class="form-control">
+  <a [routerLink]="['/']">< Retour</a>
+  <form class="form-control mt-4 mb-5">
     <div class="form-group">
       <label for="name">Nom</label>
       <input type="text" id="name" name="name" placeholder="Le nom de la librairie"
              required [(ngModel)]="name">
     </div>
-    
+
     <div class="form-group">
       <label for="address"> Adresse</label>
       <input type="text" required id="address" name="address" placeholder="L'adresse postale" [(ngModel)]="address">
