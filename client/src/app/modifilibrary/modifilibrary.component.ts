@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LibrairiesService } from '../librairies.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-modifilibrary',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ModifilibraryComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private serviceLibrary: LibrairiesService) { }
+  constructor(private router: Router, private route: ActivatedRoute,private serviceLibrary: LibrairiesService) { }
  nom:string;
  adresse:string;
  an:number;
@@ -33,7 +33,10 @@ export class ModifilibraryComponent implements OnInit {
       let ob={id:this.id, name:this.nom ,address:this.adresse ,yearCreated:this.an};
       this.serviceLibrary.putLibrairy(ob).subscribe(response=> console.log(response.data));
       alert("modification réussi");
-    }
+  }
+  retour() {
+    this.router.navigate(['/detailBibliotheque/' + this.id]);
+  }
     
 
 
