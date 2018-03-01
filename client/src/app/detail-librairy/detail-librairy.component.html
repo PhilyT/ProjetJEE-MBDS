@@ -29,7 +29,7 @@
             <td>{{book.author}}</td>
             <td>{{book.releaseDate| date: 'dd/MM/yyyy'}}</td>
             <td>
-              <button type="button" class="btn btn-danger">Supprimer</button>
+              <button type="button" class="btn btn-danger" (click)="deleteLivre(book.id)">Supprimer</button>
             </td>
             <td><button class="btn btn-primary"  [routerLink]="['/modifierLivre', librairy.id,book.id]">Modifier</button></td>
           </tr>
