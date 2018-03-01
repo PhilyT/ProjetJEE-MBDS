@@ -23,7 +23,9 @@ const appRoutes: Routes = [
   { path: 'ajoutLibrairie', component: AjoutlibrairieComponent },
   { path: 'detailBibliotheque/:id', component: DetailLibrairyComponent },
   { path: 'modifierLivre/:idLibrairy/:idBook', component: UpdateBookComponent },
-  { path: 'modifierLibrairy/:idLibrairy', component: ModifilibraryComponent}
+  { path: 'modifierLibrairy/:idLibrairy', component: ModifilibraryComponent },
+  { path: 'ajoutLivre/:idLibrairy', component: AjoutlivreComponent }
+  
 ]
 
 
