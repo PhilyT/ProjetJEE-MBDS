@@ -12,7 +12,6 @@ import {LibrairiesService} from '../librairies.service';
 })
 export class DetailLibrairyComponent implements OnInit {
   librairy: any;
-
   constructor(private router: Router,
               private route: ActivatedRoute,
               private http: Http,
@@ -35,5 +34,15 @@ export class DetailLibrairyComponent implements OnInit {
       alert("supression réussie !");
       this.router.navigate(['/']);
     });
+  }
+  deleteLivre(book) {
+    console.log(book);
+    this.librairyBooksService.deleteLivreFromLibrary(book).subscribe(response => {
+      alert("supression du livre reussie!");
+      this.librairyBooksService.getBooksOfLibrairy(this.librairy.id).subscribe(response2 => {
+        this.librairy.books = response2;
+      })
+    });
+    //this.router.navigate(['/detailBibliotheque/' + this.librairy.id]);
   }
 }

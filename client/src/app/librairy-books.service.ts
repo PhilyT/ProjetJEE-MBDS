@@ -47,4 +47,8 @@ export class LibrairyBooksService {
     const options = new RequestOptions({ headers: headers });
     return this.http.post(url, book, options).map((response: Response) => response.json());
   }
+  deleteLivreFromLibrary(bookid) {
+    const url = 'http://localhost:8081/tpwsrest/book?id=' + bookid;
+    return this.http.delete(url).map((response: Response) => response);
+  }
 }
