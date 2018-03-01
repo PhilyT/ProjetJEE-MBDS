@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 import { LibrairyBooksService} from '../librairy-books.service';
 import {LibrairiesService} from '../librairies.service';
 
@@ -12,7 +13,8 @@ import {LibrairiesService} from '../librairies.service';
 export class DetailLibrairyComponent implements OnInit {
   librairy: any;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private router: Router,
+              private route: ActivatedRoute,
               private http: Http,
               private librairyBooksService: LibrairyBooksService,
               private  librairiesService: LibrairiesService) { }
@@ -26,6 +28,12 @@ export class DetailLibrairyComponent implements OnInit {
           this.librairy.books = response2;
         });
       });
+    });
+  }
+  deleteLibrairy() {
+    this.librairiesService.deleteLibrary(this.librairy.id).subscribe(response => {
+      alert("supression réussie !");
+      this.router.navigate(['/']);
     });
   }
 }

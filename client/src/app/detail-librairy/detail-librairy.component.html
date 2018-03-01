@@ -32,7 +32,7 @@
           </tbody>
         </table>
       </div>
-      <button class="btn btn-primary" [routerLink]="['/modifierLibrairy', librairy.id]">Modifier</button> <button class="btn btn-danger">Supprimer</button>
+      <button class="btn btn-primary" [routerLink]="['/modifierLibrairy', librairy.id]">Modifier</button> <button class="btn btn-danger" (click)="deleteLibrairy()">Supprimer</button>
     </div>
   </div>
 </div>
