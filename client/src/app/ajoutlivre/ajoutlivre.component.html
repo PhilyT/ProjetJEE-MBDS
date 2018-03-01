@@ -1,3 +1,24 @@
-<p>
-  ajoutlivre works!
-</p>
+<div class="myconainer">
+  <form class="form-control">
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" placeholder="Le nom du livre"
+             required [(ngModel)]="nom">
+    </div>
+
+    <div class="form-group">
+      <label for="author"> Auteur</label>
+      <input type="text" required id="author" name="author" placeholder="L'auteur du livre" [(ngModel)]="author">
+    </div>
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input type="text" required id="isbn" name="isbn" placeholder="Le ISBN" [(ngModel)]="isbn">
+    </div>
+
+    <div class="form-group">
+      <label for="releaseDate">Date de sortie</label>
+      <input type="text" required id="releaseDate" name="releaseDate" placeholder="YYYY-MM-DD HH:MM:SS.MS" [(ngModel)]="releaseDate">
+    </div>
+    <input type="submit" value="Ajouter" (click)="ajoutBookToLibrary()">
+  </form>
+</div>
