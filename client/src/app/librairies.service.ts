@@ -40,6 +40,6 @@ export class LibrairiesService {
   }
   deleteLibrary(id) {
     const url = 'http://localhost:8081/tpwsrest/library?id=' + id;
-    return this.http.delete(url).map((response: Response) => response.json());
+    return this.http.delete(url).map((response: Response) => response);
   }
 }

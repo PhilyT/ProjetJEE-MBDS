@@ -2,7 +2,7 @@
   <script src="assets/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  
+
 <div class="mydiv">
   <div class="slide">
 <angular-image-slider [images]="imagesUrl"></angular-image-slider>
@@ -11,7 +11,7 @@
     <table class="table">
         <thead>
           <tr>
-            
+
             <th>Bibliothéques</th>
             <th></th>
             <th></th>
@@ -21,13 +21,14 @@
           <tr *ngFor="let library of librairies">
            <td ><a [routerLink]="['detailBibliotheque', library.id]" class="link">{{library.name}} </a></td>
             <td >
-                <button type="button" class="btn btn-danger">Supprimer</button>
-                 
+                <button type="button" class="btn btn-danger" (click)="deleteLibrairy(library.id)">Supprimer</button>
+
             </td>
             <td><button type="button" class="btn btn-primary" [routerLink]="['modifierLibrairy', library.id]">Modifier</button></td>
           </tr>
-          
+
         </tbody>
       </table>
+      <button id="ajout"type="button" class="btn btn-primary btn-block" routerLink="ajoutLibrairie">Ajouter une bibliothéque</button><br><br>
 </div>
 </div>

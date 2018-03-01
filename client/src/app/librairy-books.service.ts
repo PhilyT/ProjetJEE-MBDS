@@ -38,4 +38,13 @@ export class LibrairyBooksService {
     const options = new RequestOptions({headers: headers});
     return this.http.put(url, {}, options).map((response: Response) => response.json());
   }
+  addBookToLibrary(idLibrairy, book) {
+    book.releaseDate = book.releaseDate.replace('T', ' ');
+    book.releaseDate = book.releaseDate.replace('Z', '.000');
+    const url = 'http://localhost:8081/tpwsrest/biblio/' + idLibrairy + '/book?book.id=' + book.id + '&name=' + book.name + '&releaseDate=' + book.releaseDate + '&isbn=' + book.isbn + '&author=' + book.author;
+    const headers = new Headers();
+    headers.append('Accept', 'application/json');
+    const options = new RequestOptions({ headers: headers });
+    return this.http.post(url, book, options).map((response: Response) => response.json());
+  }
 }
